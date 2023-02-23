@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block body %}
+    <table id = "table" class = "table table-bordered">
+        <thead class = "alert-success">
+            <tr>
+                <th>Status</th>
+                <th>Admission Number</th>
+                <th>Full Names</th>
+                <th>Surname</th>
+                <th>Gender</th>
+                <th>Date of Admission</th>
+                <th>Address</th>
+                <th>Date of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in all_students %}
+            <tr>
+                <td>{{ student.current_status }}</td>
+                <td>{{ student.adm_number }}</td>
+                <td>{{ student.full_name }}</td>
+                <td>{{ student.surname }}</td>
+                <td>{{ student.date_of_admission }}</td>
+                <td>{{ student.address }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.date_of_birth }}</td>
+            </tr>
+           {% endfor %}
+        </tbody>
+    </table>
+ 
+{% endblock %}
