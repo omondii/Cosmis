@@ -1,0 +1,130 @@
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'open Sans', sans-sherif;
+}
+
+body{
+    background: #b7b5b5;
+    margin-left: 180px;
+    
+}
+
+.wrapper .sidebar{
+  background: grey;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 100%;
+  padding: 20px 0;
+  transition: all 0.5s ease;
+}
+
+.wrapper .sidebar .profile{
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: small;
+}
+
+.wrapper .sidebar .profile img{
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3{
+  color: #2d2c2c;
+  margin:10px 0 5px;
+}
+
+.wrapper .sidebar ul li a{
+  display: block;
+  padding: 13px 30px;
+  color: rgb(44, 42, 42);
+  font-size: 16px;
+  position: relative;
+}
+
+.wrapper .sidebar ul li a .icon{
+  color: #dee4ec;
+  width: 30px;
+  display: inline-block;
+}
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+  color: #0c7db1;
+  background: white;
+  border-right: 2px solid rgb(5, 68, 104);
+}
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active.icon{
+  color: #0c7db1;
+}
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+  display: block;
+}
+
+.wrapper .section{
+  width: calc(100% - 225px);
+  margin-left: 225px;
+  transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+  background: #0c7db1(233, 237, 240);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.nav-item .nav-link{
+  margin-left: -252px;
+  color: black;
+}
+.nav-item .nav-link1{
+  margin-left: -200px;
+  color: black;
+}
+.nav-item .nav-link2{
+  margin-left: -20px;
+  color: black;
+}
+.nav-item .nav-link3{
+  margin-left: 600px;
+  color: black;
+}
+
+body.active .wrapper .sidebar{
+  left: -225px;
+  color: whitesmoke;
+}
+
+body.active .wrapper .section{
+  margin-left: 0;
+  width: 100%;
+}
+.wrapper .log{
+  margin-left: -240px;
+}
+
+.wrapper .mid{
+  margin: auto;
+}
+
+.top_navbar{
+  color: beige;
+}
+.lout{
+  margin-bottom: -200px;
+}

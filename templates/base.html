@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cosmis</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{% static 'css/css.css' %}" rel="stylesheet">
+    
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="section">
+                <div class="top_navbar">
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="{% url 'index' %} " class="nav-link"><i class="fa fa-home"></i></a>
+                      </li>
+                      <li class="nav-item d-none d-sm-inline-block">
+                        <a href="#" class="nav-link1">School Year: {{ current_year }}</a>
+                      </li>
+                      <li class="nav-item d-none d-sm-inline-block">
+                        <a href="#" class="nav-link2">Academic Term: {{ current_term }}</a>
+                      <li class="nav-item d-none d-sm-inline-block">
+                        <a href="#" class="nav-link3">
+                            <span class="icon"><i class="fa-sharp fa-solid fa-person-walking-dashed-line-arrow-right"></i></span>
+                            <span class="item">Log out</span>
+                        </a>
+                      </li>
+                    </li>
+                </div> 
+            </div> 
+            <div class="sidebar">
+                <div class="profile">
+                    <img src={% static "\images\cosmis.png" %} alt="profile_picture">
+                    <h3>Cosmis School Manager</h3>   
+                </div>
+                <ul>
+                    <li>
+                        <a href="{% url 'index' %}">
+                            <span class="icon"><i class="fa-sharp fa-solid fa-school"></i></span>
+                            <span class="item">HOME</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'students/studentstable' %}">
+                            <span class="icon"><i class="fa-sharp fa-solid fa-graduation-cap"></i></span>
+                            <span class="item">STUDENTS</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fa-sharp fa-solid fa-user-tie"></i></span>
+                            <span class="item">TEACHERS</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'current-year' %}">
+                            <span class="icon"><i class="fa-duotone fa-check-double"></i></span>
+                            <span class="item">FINANCE</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fa-duotone fa-check-double"></i></span>
+                            <span class="item">Results</span>
+                        </a>
+                    </li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <li><a href="#">Logout</a></li>
+                      {% else %}
+                        <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
+                      {% endif %}
+                     </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class ="container-fluid">
+            {% block body %}
+            {% endblock %}
+        </div>
+
+    </body>
+</html>
