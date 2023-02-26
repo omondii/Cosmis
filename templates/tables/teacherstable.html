@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% block breadcrumb %}
+<a class="btn btn-primary" href="{% url 'add' %}"><i
+    class="fas fa-plus"></i> New student</a>
+{% endblock breadcrumb %}
+
+    <table id = "table" class = "table table-bordered">
+        <thead class = "alert-success">
+            <tr>
+                <th>Status</th>
+                <th>TSC Number</th>
+                <th>Full Names</th>
+                <th>Surname</th>
+                <th>Gender</th>
+                <th>Date of Joined</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in all_teachers %}
+            <tr>
+                <td>{{ teacher.current_status }}</td>
+                <td>{{ teacher.tsc_number }}</td>
+                <td>{{ teacher.full_name }}</td>
+                <td>{{ teacher.surname }}</td>
+                <td>{{ teacher.gender }}</td>
+                <td>{{ teacher.date_joined }}</td>
+                <td>{{ teacher.address }}</td>
+                <td>{{ teacher.phone_number  }}</td>
+            </tr>
+           {% endfor %}
+        </tbody>
+    </table>
+ 
+{% endblock %}

@@ -198,8 +198,8 @@ class CurrentYearAndTermView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         form = self.form_class(
             initial={
-                "current_year": AcademicYear.objects.get(current=True),
-                "current_term": AcademicTerm.objects.get(current=True),
+                    "current_year": AcademicYear.objects.get(current=True),
+                    "current_term": AcademicTerm.objects.get(current=True),
             }
         )
         return render(request, self.template_name, {"form": form})

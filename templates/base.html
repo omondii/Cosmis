@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>Cosmis</title>
         <meta name="description" content="">
         <link href="{% static 'css/css.css' %}" rel="stylesheet">
@@ -50,20 +51,20 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{% url 'teacherstable' %}">
                             <span class="icon"><i class="fa-sharp fa-solid fa-user-tie"></i></span>
                             <span class="item">TEACHERS</span>
                         </a>
                     </li>
                     <li>
                         <a href="{% url 'current-year' %}">
-                            <span class="icon"><i class="fa-duotone fa-check-double"></i></span>
+                            <span class="icon"><i class="fa-sharp fa-solid fa-coins"></i></span>
                             <span class="item">FINANCE</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <span class="icon"><i class="fa-duotone fa-check-double"></i></span>
+                            <span class="icon"><i class="fa-solid fa-check-to-slot"></i></span>
                             <span class="item">Results</span>
                         </a>
                     </li>
