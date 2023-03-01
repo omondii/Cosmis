@@ -16,18 +16,20 @@
   <div class="container">
 </div>
   {# Assumes you setup the password_reset view in your URLconf #}
-  <head></head>
+  <head>
+    <title>Cosmis login</title>
+  </head>
   
   <div class="center">
   <body>
-    <h1>COSMIS LOGIN</H1>
+    <h1>COSMIS LOGIN</h1>
   <div class="container">
     <div class="title">
   <form method="post" action="{% url 'login' %}">
     {% csrf_token %}  
     <div class="user-details">
       <div class="input-box">
-        <span class="details">UserName</span>
+        <span class="details">Username</span>
         <input {{ form.username }}
       </div>
       <hr>

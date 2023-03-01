@@ -1,62 +1,37 @@
 {% extends "base.html" %}
-{% load widget_tweaks %}
+{% load crispy_forms_tags %}
 {% block body %}
 <div class="container">
-  <h3 class="text-block m-4"> All Students</h3>
-  {% if success %}
-     <div class="alert lert-success" role="alert">
-        Student successfully Enrolled
-        <a href="{% url 'students' %}" class="alert-link">Go to Home page.</a>
-     </div>
-     <div class="alert lert-success" role="alert">
-      To enroll a new student
-      <a href="{% url 'students/add' %}" class="alert-link">New Student</a>
-   </div>
-  {% else %}
-     <div class="row justify-content-center">
-        <div class="col-6">
-            <div class="card border-light mb-3" style="max-width: 20rem;">
-                <div class="card-header">
-                    <i class="fa-duotone fa-address-card fa-lg"></i> Student Registration
-                </div>
-                <div class="card-body">
-                  <form action="{% url 'students/add' %}" method="POST">
-                    {% csrf_token %}
-                 <div class="form-group">
-                   <label for="StudentID" class="form-label">Student ID</label>
-                   {% render_field form.student_id class="form-control" placeholder=form.student_id.label type="text" %}
-                 </div>
-                 <div class="form-group">
-                   <label for="fullname" class="form-label">Full Names</label>
-                    {% render_field form.first_name class="form-control" placeholder=form.first_name.label type="text" %}
-                 </div>
-                 <div class="form-group">
-                   <label for="surname" class="form-label">Surname</label>
-                    {% render_field form.last_name class="form-control" placeholder=form.last_name.label type="text" %}
-                 </div>
-                 <div class="form-group">
-                  <label for="form" class="form-label">Form/Class</label>
-                    {% render_field form.form class="form-control" placeholder=form.form label=form.Form type="text" %}
-                 </div>
-                 <div class="form-group">
-                  <label for="stream" class="form-label">Stream</label>
-                    {% render_field form.stream class="form-control" placeholder=form.stream.label type="text" %}
-                 </div>
-                 <div class="form-group">
-                  <label for="meangrade" class="form-label">Mean Grade</label>
-                    {% render_field form.mean_grade class="form-control" placeholder=form.mean_grade.label type="text" %}
-                 </div>
-                 <div class="form-group">
-                  <label for="address" class="form-label">Address</label>
-                    {% render_field form.address class="form-control" placeholder=form.address.label type="text" %}
-                 </div>
-                    <button type="submit" class="btn btn-primary">Add</button>
-                    <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
-                  </form>
-                </div>
+   <h1>Student Form</h1>
+   <form action="{% url 'tables/add' %}" method="POST">
+         {% csrf_token %}
+            <div class="form-row">
+
+              <div class="form-group col-4">
+                {{ form.adm_number|as_crispy_field }}
               </div>
-        </div>
-     </div>
+              <div class="form-group col-4">
+                {{ form.full_name|as_crispy_field }}
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-6">
+                {{ form.surname|as_crispy_field }}
+              </div>
+              <div class="form-group col-6">
+                {{ form.gender|as_crispy_field }}
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-4">
+                {{ form.address|as_crispy_field }}
+              </div>
+              <div class="form-group col-8">
+                {{ form.date_of_birth|as_crispy_field }}
+              </div>
+            </div>
+            <button type="submit" class="save btn btn-success">Save</button>
+            <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
+          </form>
 </div>
-{% endif %}
 {% endblock %}

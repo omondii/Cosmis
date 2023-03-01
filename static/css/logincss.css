@@ -1,18 +1,18 @@
 *
        {
-         padding: 0;
-         margin: 0;
-         box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
        }
        body
        {
         background-color: rgb(176, 167, 156);
-         background-size: cover;
-         background-position: center;
-         font-family: sans-serif;
-         justify-content: center;
-         align-items: center;
-         padding: 10px;
+        background-size: cover;
+        background-position: center;
+        font-family: sans-serif;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
        }
        .center{
         justify-content: center;
@@ -64,23 +64,21 @@
         border-color:aliceblue;
        }
     
-       form .button{
-        height: 45px;
-        margin: 45px 0;
+      .button{
+        justify-content: center;
        }
-       form .button input{
-        height: 100%;
-        width: 1000%;
-        outline: none;
-        color: #fff;
-        border: none;
-        font-size: 18px;
-        font-weight: 500;
-        border-radius: 5px;
-        letter-spacing: 1px;
+      .button input{
+      height: 100%;
+      width: 1000%;
+      outline: none;
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #c0c4c7, #837986);
+       }
+      .button input:hover{
         background: linear-gradient(135deg, #c0c4c7, #837986);
        }
-       form .button input:hover{
-        background: linear-gradient(135deg, #c0c4c7, #837986);
-       }
-    
